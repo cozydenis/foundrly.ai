@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="de78bcfe-024f-4bc7-8c80-08263f8535d3" name="Changes" comment="first commit">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/integrations/crunchbase.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/integrations/reddit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/integrations/trends.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/llm/synthesis.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/validation/competition.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/validation/feasibility.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/validation/market.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/competitor-service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/CTAFooter.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/Features.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/Hero.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/HowItWorks.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/IdeaValidator.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/LandingPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/Navigation.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/styles/globals.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/scoring/ValidationEngine.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openai-service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/modern-validator.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-landing/build/asset-manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-landing/build/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-landing/build/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-landing/build/static/css/main.1823ccc5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-landing/build/static/css/main.1823ccc5.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-landing/build/static/js/main.786ab56e.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-landing/build/static/js/main.786ab56e.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-landing/build/static/js/main.786ab56e.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-landing/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-landing/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-landing/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-landing/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-landing/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-landing/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-landing/src/components/Demo.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-landing/src/components/FAQ.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-landing/src/components/Features.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-landing/src/components/Footer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-landing/src/components/Hero.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-landing/src/components/HowItWorks.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-landing/src/components/Pricing.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-landing/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-landing/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-landing/tailwind.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-llama/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-llama/build/asset-manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-llama/build/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-llama/build/static/css/main.638c7298.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-llama/build/static/css/main.638c7298.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-llama/build/static/js/main.c4082c5f.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-llama/build/static/js/main.c4082c5f.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-llama/build/static/js/main.c4082c5f.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-llama/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-llama/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-llama/postcss.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-llama/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-llama/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-llama/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-llama/src/components/About.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-llama/src/components/Features.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-llama/src/components/Hero.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-llama/src/components/Testimonial.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-llama/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-llama/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-llama/tailwind.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-validator/build/asset-manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-validator/build/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-validator/build/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-validator/build/static/css/main.fd9f5725.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-validator/build/static/css/main.fd9f5725.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-validator/build/static/js/main.4af2b277.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-validator/build/static/js/main.4af2b277.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-validator/build/static/js/main.4af2b277.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-validator/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-validator/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-validator/postcss.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-validator/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-validator/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-validator/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-validator/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-validator/src/components/ErrorBoundary.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-validator/src/components/LoadingState.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-validator/src/components/ValidationResults.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-validator/src/components/ValidatorHero.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-validator/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-validator/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-validator/tailwind.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trends-service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validator.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="30EEBfqzK5u6R1T7leCeG6IzWvO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/Applications/IntelliJ IDEA.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="de78bcfe-024f-4bc7-8c80-08263f8535d3" name="Changes" comment="" />
+      <created>1753184200320</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1753184200320</updated>
+      <workItem from="1753184203864" duration="9336000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+  </component>
+</project>

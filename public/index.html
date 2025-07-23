@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundrly - AI Startup Validator</title>
+    <meta name="description" content="Validate your startup ideas with AI-powered analysis. Get market insights, competitive analysis, and viability scores.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #f9fafb;
+            color: #111827;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            line-height: 1.6;
+        }
+        .welcome-container { 
+            max-width: 700px;
+            padding: 4rem 3rem;
+            background: white;
+            border-radius: 24px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        .logo { 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 3rem;
+        }
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: #111827;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo-text {
+            font-size: 2.25rem;
+            font-weight: 600;
+            color: #111827;
+        }
+        .main-content {
+            margin-bottom: 3rem;
+        }
+        .title {
+            font-size: 3.5rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            line-height: 1;
+            letter-spacing: -0.02em;
+            color: #111827;
+        }
+        .subtitle {
+            font-size: 1.375rem;
+            color: #6b7280;
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+            line-height: 1.5;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-button {
+            background: #111827;
+            color: white;
+            padding: 1.125rem 3rem;
+            border-radius: 9999px;
+            font-size: 1.25rem;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 2.5rem;
+        }
+        .cta-button:hover {
+            background: #374151;
+            transform: translateY(-1px);
+        }
+        .powered-by {
+            font-size: 0.875rem;
+            color: #9ca3af;
+            font-weight: 400;
+            border-top: 1px solid #f3f4f6;
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <div class="logo">
+            <div class="logo-icon">
+                <svg width="24" height="24" fill="white" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+            </div>
+            <div class="logo-text">Foundrly</div>
+        </div>
+        
+        <div class="main-content">
+            <h1 class="title">Validate your startup</h1>
+            <p class="subtitle">
+                Get AI-powered insights on market potential, competition analysis, and viability scores for your startup idea.
+            </p>
+            
+            <a href="/validator" class="cta-button">
+                Start Validation
+            </a>
+        </div>
+        
+        <div class="powered-by">
+            Powered by OpenAI GPT-4, Google Trends, and Web Intelligence
+        </div>
+    </div>
+</body>
+</html>
+    
+    <!-- OLD CONTENT HIDDEN -->
+    <div style="display: none;">
+        <header class="header">
+            <h1><i class="fas fa-lightbulb"></i> Startup Idea Validator</h1>
+            <p class="subtitle">Get AI-powered validation for your startup ideas with market analysis and competitor research</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Input Form -->
+            <div class="input-section">
+                <div class="form-container">
+                    <h2><i class="fas fa-rocket"></i> Submit Your Idea</h2>
+                    
+                    <div class="input-mode-toggle">
+                        <button id="simple-mode" class="mode-btn active">Simple Mode</button>
+                        <button id="detailed-mode" class="mode-btn">Detailed Mode</button>
+                    </div>
+
+                    <form id="idea-form">
+                        <!-- Simple Mode -->
+                        <div id="simple-form" class="form-mode active">
+                            <div class="form-group">
+                                <label for="description">
+                                    <i class="fas fa-edit"></i> Describe Your Startup Idea
+                                </label>
+                                <textarea 
+                                    id="description" 
+                                    name="description" 
+                                    rows="6" 
+                                    placeholder="Example: I want to build an AI-powered app that helps small restaurants optimize their delivery operations. Most restaurants struggle with managing orders during peak hours, leading to delays and customer complaints. My solution uses predictive algorithms to forecast demand and optimize kitchen workflow..."
+                                    required
+                                ></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Detailed Mode -->
+                        <div id="detailed-form" class="form-mode">
+                            <div class="form-group">
+                                <label for="problem">
+                                    <i class="fas fa-exclamation-triangle"></i> Problem Statement
+                                </label>
+                                <textarea 
+                                    id="problem" 
+                                    name="problem" 
+                                    rows="3"
+                                    placeholder="What specific problem are you solving? Who faces this problem?"
+                                ></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="solution">
+                                    <i class="fas fa-cogs"></i> Solution
+                                </label>
+                                <textarea 
+                                    id="solution" 
+                                    name="solution" 
+                                    rows="3"
+                                    placeholder="How does your solution solve the problem? What makes it unique?"
+                                ></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="market">
+                                    <i class="fas fa-chart-line"></i> Market & Opportunity
+                                </label>
+                                <textarea 
+                                    id="market" 
+                                    name="market" 
+                                    rows="3"
+                                    placeholder="Who is your target market? How big is the opportunity?"
+                                ></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="competition">
+                                    <i class="fas fa-users"></i> Competition
+                                </label>
+                                <textarea 
+                                    id="competition" 
+                                    name="competition" 
+                                    rows="2"
+                                    placeholder="Who are your competitors? What's your competitive advantage?"
+                                ></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="team">
+                                    <i class="fas fa-user-friends"></i> Team
+                                </label>
+                                <textarea 
+                                    id="team" 
+                                    name="team" 
+                                    rows="2"
+                                    placeholder="Tell us about your team's background and expertise"
+                                ></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-search"></i> Validate My Idea
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-section" id="results-section" style="display: none;">
+                <div class="results-container">
+                    <h2><i class="fas fa-chart-bar"></i> Validation Results</h2>
+                    
+                    <!-- Overall Score -->
+                    <div class="overall-score">
+                        <div class="score-circle">
+                            <div class="score-value" id="overall-score">0.0</div>
+                            <div class="score-label">Overall Score</div>
+                        </div>
+                        <div class="rating-badge" id="rating-badge">
+                            <span id="rating-text">-</span>
+                        </div>
+                    </div>
+
+                    <!-- Score Breakdown -->
+                    <div class="score-breakdown">
+                        <h3>Score Breakdown</h3>
+                        <div class="scores-grid" id="scores-grid">
+                            <!-- Scores will be dynamically added here -->
+                        </div>
+                    </div>
+
+                    <!-- Feedback -->
+                    <div class="feedback-section">
+                        <h3>Detailed Analysis</h3>
+                        <div class="feedback-container" id="feedback-container">
+                            <!-- Feedback will be dynamically added here -->
+                        </div>
+                    </div>
+
+                    <!-- Additional Analysis -->
+                    <div class="additional-analysis" id="additional-analysis">
+                        <!-- Trends and competitor data will be added here -->
+                    </div>
+
+                    <button class="new-validation-btn" onclick="resetForm()">
+                        <i class="fas fa-plus"></i> Validate Another Idea
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div class="loading-section" id="loading-section" style="display: none;">
+                <div class="loading-container">
+                    <div class="loader"></div>
+                    <h3>Analyzing Your Idea...</h3>
+                    <p>This may take up to 30 seconds as we analyze market trends and find competitors</p>
+                    <div class="loading-steps">
+                        <div class="step active">
+                            <i class="fas fa-brain"></i> Extracting key components
+                        </div>
+                        <div class="step">
+                            <i class="fas fa-chart-line"></i> Analyzing market trends
+                        </div>
+                        <div class="step">
+                            <i class="fas fa-search"></i> Finding competitors
+                        </div>
+                        <div class="step">
+                            <i class="fas fa-calculator"></i> Calculating scores
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

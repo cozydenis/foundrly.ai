@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundrly - Validate Your Startup Idea</title>
+    <meta name="description" content="AI-powered startup idea validation with real-time analysis and insights.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233b82f6'%3E%3Cpath d='M13 10V3L4 14h7v7l9-11h-7z'/%3E%3C/svg%3E">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: { 50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1', 400: '#94a3b8', 500: '#64748b', 600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#0f172a', 950: '#020617' },
+                        primary: { 50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a', 950: '#172554' },
+                        accent: { 50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd', 300: '#7dd3fc', 400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1', 800: '#075985', 900: '#0c4a6e', 950: '#082f49' }
+                    },
+                    fontFamily: { 'sans': ['Inter', 'system-ui', 'sans-serif'] },
+                    animation: { 'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite', 'bounce-slow': 'bounce 3s infinite' }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .glass-strong { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(30px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .grid-pattern { background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px); background-size: 50px 50px; }
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1e293b; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #3b82f6, #0ea5e9); border-radius: 4px; }
+        ::selection { background: rgba(59, 130, 246, 0.3); color: #ffffff; }
+        
+        .score-excellent { background: linear-gradient(135deg, #10b981, #059669); }
+        .score-good { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+        .score-average { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .score-poor { background: linear-gradient(135deg, #ef4444, #dc2626); }
+        .score-very-poor { background: linear-gradient(135deg, #991b1b, #7f1d1d); }
+        
+        .rating-excellent { background: linear-gradient(135deg, #10b981, #059669); }
+        .rating-good { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+        .rating-average { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .rating-poor { background: linear-gradient(135deg, #ef4444, #dc2626); }
+        .rating-very-poor { background: linear-gradient(135deg, #991b1b, #7f1d1d); }
+    </style>
+</head>
+<body class="bg-dark-950 text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-dark-900/80 backdrop-blur-xl border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-gradient-to-br from-primary-500 to-accent-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-bolt text-white text-sm"></i>
+                    </div>
+                    <span class="text-xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Foundrly</span>
+                </div>
+                <a href="/landing" class="px-4 py-2 text-gray-300 hover:text-white transition-colors duration-200">
+                    <i class="fas fa-home mr-2"></i>Home
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="pt-16 relative overflow-hidden">
+        <!-- Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-900/10 via-dark-900 to-accent-900/10"></div>
+        <div class="absolute inset-0 grid-pattern opacity-20"></div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-20 w-64 h-64 bg-primary-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div class="absolute bottom-20 right-20 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl animate-bounce-slow"></div>
+        
+        <!-- Content Container -->
+        <div class="relative z-10 container mx-auto px-6 py-12">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
+                    Validate Your 
+                    <span class="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">Startup Idea</span>
+                </h1>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Get comprehensive AI-powered analysis with market research and competitor insights in minutes.
+                </p>
+            </div>
+
+            <!-- Input Section -->
+            <div id="input-section" class="max-w-4xl mx-auto mb-12">
+                <div class="glass-strong rounded-2xl p-8 border border-white/20">
+                    <h2 class="text-2xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-rocket mr-3 text-primary-400"></i>
+                        Submit Your Idea
+                    </h2>
+                    
+                    <!-- Mode Toggle -->
+                    <div class="flex mb-8 bg-dark-800/50 rounded-xl p-1">
+                        <button id="simple-mode" class="flex-1 py-3 px-6 rounded-lg font-medium transition-all duration-200 bg-gradient-to-r from-primary-600 to-accent-600 text-white">
+                            Simple Mode
+                        </button>
+                        <button id="detailed-mode" class="flex-1 py-3 px-6 rounded-lg font-medium transition-all duration-200 text-gray-400 hover:text-white">
+                            Detailed Mode
+                        </button>
+                    </div>
+
+                    <form id="idea-form">
+                        <!-- Simple Mode Form -->
+                        <div id="simple-form" class="space-y-6">
+                            <div class="form-group">
+                                <label for="description" class="block text-sm font-medium text-gray-200 mb-3">
+                                    <i class="fas fa-edit mr-2 text-primary-400"></i>
+                                    Describe Your Startup Idea
+                                </label>
+                                <textarea 
+                                    id="description" 
+                                    name="description" 
+                                    rows="6" 
+                                    class="w-full px-4 py-3 bg-dark-800/50 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all duration-200 resize-none"
+                                    placeholder="Example: I want to build an AI-powered app that helps small restaurants optimize their delivery operations. Most restaurants struggle with managing orders during peak hours, leading to delays and customer complaints. My solution uses predictive algorithms to forecast demand and optimize kitchen workflow..."
+                                ></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Detailed Mode Form -->
+                        <div id="detailed-form" class="space-y-6" style="display: none;">
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                <div class="form-group">
+                                    <label for="problem" class="block text-sm font-medium text-gray-200 mb-3">
+                                        <i class="fas fa-exclamation-triangle mr-2 text-red-400"></i>
+                                        Problem Statement
+                                    </label>
+                                    <textarea id="problem" name="problem" rows="4" class="w-full px-4 py-3 bg-dark-800/50 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all duration-200 resize-none" placeholder="What specific problem are you solving? Who faces this problem?"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="solution" class="block text-sm font-medium text-gray-200 mb-3">
+                                        <i class="fas fa-cogs mr-2 text-green-400"></i>
+                                        Solution
+                                    </label>
+                                    <textarea id="solution" name="solution" rows="4" class="w-full px-4 py-3 bg-dark-800/50 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all duration-200 resize-none" placeholder="How does your solution solve the problem? What makes it unique?"></textarea>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                <div class="form-group">
+                                    <label for="market" class="block text-sm font-medium text-gray-200 mb-3">
+                                        <i class="fas fa-chart-line mr-2 text-blue-400"></i>
+                                        Market & Opportunity
+                                    </label>
+                                    <textarea id="market" name="market" rows="4" class="w-full px-4 py-3 bg-dark-800/50 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all duration-200 resize-none" placeholder="Who is your target market? How big is the opportunity?"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="competition" class="block text-sm font-medium text-gray-200 mb-3">
+                                        <i class="fas fa-users mr-2 text-purple-400"></i>
+                                        Competition
+                                    </label>
+                                    <textarea id="competition" name="competition" rows="4" class="w-full px-4 py-3 bg-dark-800/50 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all duration-200 resize-none" placeholder="Who are your competitors? What's your competitive advantage?"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="team" class="block text-sm font-medium text-gray-200 mb-3">
+                                    <i class="fas fa-user-friends mr-2 text-yellow-400"></i>
+                                    Team
+                                </label>
+                                <textarea id="team" name="team" rows="3" class="w-full px-4 py-3 bg-dark-800/50 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all duration-200 resize-none" placeholder="Tell us about your team's background and expertise"></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full mt-8 px-8 py-4 bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-500 hover:to-accent-500 text-white text-lg font-semibold rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed">
+                            <i class="fas fa-search mr-2"></i>
+                            Validate My Idea
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Loading Section -->
+            <div id="loading-section" class="max-w-4xl mx-auto text-center py-16" style="display: none;">
+                <div class="glass-strong rounded-2xl p-12">
+                    <div class="relative mb-8">
+                        <div class="w-16 h-16 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full mx-auto flex items-center justify-center animate-pulse">
+                            <i class="fas fa-brain text-white text-2xl"></i>
+                        </div>
+                        <div class="absolute inset-0 rounded-full border-4 border-primary-500/20 animate-spin"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Analyzing Your Idea...</h3>
+                    <p class="text-gray-400 mb-8">This may take up to 30 seconds as we analyze market trends and find competitors</p>
+                    
+                    <div class="space-y-4">
+                        <div class="step flex items-center justify-center space-x-3 text-primary-400">
+                            <i class="fas fa-brain"></i>
+                            <span>Extracting key components</span>
+                        </div>
+                        <div class="step flex items-center justify-center space-x-3 text-gray-500">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Analyzing market trends</span>
+                        </div>
+                        <div class="step flex items-center justify-center space-x-3 text-gray-500">
+                            <i class="fas fa-search"></i>
+                            <span>Finding competitors</span>
+                        </div>
+                        <div class="step flex items-center justify-center space-x-3 text-gray-500">
+                            <i class="fas fa-calculator"></i>
+                            <span>Calculating scores</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div id="results-section" class="max-w-6xl mx-auto" style="display: none;">
+                <!-- Results will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        // Enhanced mode switching with animations
+        const simpleModeBtn = document.getElementById('simple-mode');
+        const detailedModeBtn = document.getElementById('detailed-mode');
+        const simpleForm = document.getElementById('simple-form');
+        const detailedForm = document.getElementById('detailed-form');
+        const descriptionField = document.getElementById('description');
+
+        function switchMode(mode) {
+            if (mode === 'simple') {
+                simpleModeBtn.classList.add('bg-gradient-to-r', 'from-primary-600', 'to-accent-600', 'text-white');
+                simpleModeBtn.classList.remove('text-gray-400');
+                detailedModeBtn.classList.remove('bg-gradient-to-r', 'from-primary-600', 'to-accent-600', 'text-white');
+                detailedModeBtn.classList.add('text-gray-400');
+                
+                simpleForm.style.display = 'block';
+                detailedForm.style.display = 'none';
+                descriptionField.setAttribute('required', 'true');
+            } else {
+                detailedModeBtn.classList.add('bg-gradient-to-r', 'from-primary-600', 'to-accent-600', 'text-white');
+                detailedModeBtn.classList.remove('text-gray-400');
+                simpleModeBtn.classList.remove('bg-gradient-to-r', 'from-primary-600', 'to-accent-600', 'text-white');
+                simpleModeBtn.classList.add('text-gray-400');
+                
+                detailedForm.style.display = 'block';
+                simpleForm.style.display = 'none';
+                descriptionField.removeAttribute('required');
+            }
+        }
+
+        simpleModeBtn.addEventListener('click', () => switchMode('simple'));
+        detailedModeBtn.addEventListener('click', () => switchMode('detailed'));
+
+        // Enhanced loading animation
+        function animateLoadingSteps() {
+            const steps = document.querySelectorAll('.step');
+            let currentStep = 0;
+            
+            const interval = setInterval(() => {
+                if (currentStep > 0) {
+                    steps[currentStep - 1].classList.remove('text-primary-400');
+                    steps[currentStep - 1].classList.add('text-green-400');
+                }
+                if (currentStep < steps.length) {
+                    steps[currentStep].classList.remove('text-gray-500');
+                    steps[currentStep].classList.add('text-primary-400');
+                    currentStep++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 3000);
+        }
+
+        // Override the original animateLoadingSteps function
+        window.animateLoadingSteps = animateLoadingSteps;
+    </script>
+</body>
+</html>
