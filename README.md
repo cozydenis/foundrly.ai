@@ -231,6 +231,33 @@ node server.js
 - No sensitive data in error responses
 - Rate limiting protection
 
+## 🌐 Deploying to Vercel
+
+### Quick Deploy
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/cozydenis/foundrly.ai)
+
+### Manual Deployment
+
+1. **Install Vercel CLI:**
+```bash
+npm i -g vercel
+```
+
+2. **Deploy from project directory:**
+```bash
+vercel
+```
+
+3. **Set environment variables in Vercel dashboard:**
+- `OPENAI_API_KEY`: Your OpenAI API key
+- `NODE_ENV`: `production`
+
+4. **Your app will be live at:**
+- Production: `https://your-app.vercel.app`
+- Marketing: `https://your-app.vercel.app/marketing`
+- Validator: `https://your-app.vercel.app/validator`
+
 ## 📄 License
 
 MIT License - see LICENSE file for details.
@@ -244,4 +271,4 @@ MIT License - see LICENSE file for details.
 
 ---
 
-**Need help?** Check the API documentation at `/api` or create an issue in the repository.
+**Created by Denis Djaferi** | **Need help?** Check the API documentation at `/api` or create an issue in the repository.

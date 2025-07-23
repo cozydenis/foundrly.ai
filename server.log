@@ -1,0 +1,23 @@
+(node:84808) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+🚀 Foundrly MVP - Startup Idea Validator
+🌐 Server running on port 3000
+📊 API Documentation: http://localhost:3000/api
+🔍 Validation Endpoint: http://localhost:3000/api/validate
+💻 Web Interface: http://localhost:3000
+
+🔧 Integration Status:
+   trends: ✅
+   reddit: ❌
+   crunchbase: ❌
+   llmSynthesis: ✅
+   openai: ✅
+   crunchbase: ❌
+
+LLM component extraction failed, using fallback: Failed to extract idea components: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+LLM keyword extraction failed, using fallback: Failed to extract keywords: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+Trends analysis failed: this.trendsService.getKeywordTrends is not a function
+LLM synthesis failed, using fallback: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+LLM keyword extraction failed, using fallback: Failed to extract keywords: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+Trends analysis failed: this.trendsService.getKeywordTrends is not a function
+LLM synthesis failed, using fallback: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.

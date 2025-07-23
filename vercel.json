@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "react-landing/build/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "react-validator/build/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "public/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/marketing/(.*)",
+      "dest": "/react-landing/build/$1"
+    },
+    {
+      "src": "/marketing",
+      "dest": "/react-landing/build/index.html"
+    },
+    {
+      "src": "/validator/(.*)",
+      "dest": "/react-validator/build/$1"
+    },
+    {
+      "src": "/validator",
+      "dest": "/react-validator/build/index.html"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/public/$1"
+    },
+    {
+      "src": "/",
+      "dest": "/public/index.html"
+    }
+  ],
+  "env": {
+    "OPENAI_API_KEY": "@openai_api_key"
+  }
+}

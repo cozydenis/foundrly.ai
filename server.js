@@ -7,6 +7,11 @@ const app = express();
 const port = process.env.PORT || 3000;
 const validationEngine = new ValidationEngine();
 
+// For Vercel deployment
+if (process.env.NODE_ENV !== 'development') {
+  app.set('trust proxy', 1);
+}
+
 // Middleware
 app.use(express.json());
 app.use(express.static('public'));
@@ -154,27 +159,30 @@ app.use((error, req, res, next) => {
   });
 });
 
-// Start server
-app.listen(port, () => {
-  console.log(`🚀 Foundrly MVP - Startup Idea Validator`);
-  console.log(`🌐 Server running on port ${port}`);
-  console.log(`📊 API Documentation: http://localhost:${port}/api`);
-  console.log(`🔍 Validation Endpoint: http://localhost:${port}/api/validate`);
-  console.log(`💻 Web Interface: http://localhost:${port}`);
-  
-  // Log integration status
-  const integrationStatus = validationEngine.getIntegrationStatus();
-  console.log('\n🔧 Integration Status:');
-  Object.entries(integrationStatus).forEach(([key, value]) => {
-    if (typeof value === 'object') {
-      Object.entries(value).forEach(([subKey, subValue]) => {
-        console.log(`   ${subKey}: ${subValue ? '✅' : '❌'}`);
-      });
-    } else {
-      console.log(`   ${key}: ${value ? '✅' : '❌'}`);
-    }
+// Start server (only for local development)
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(port, () => {
+    console.log(`🚀 Foundrly MVP - Startup Idea Validator`);
+    console.log(`🌐 Server running on port ${port}`);
+    console.log(`📊 API Documentation: http://localhost:${port}/api`);
+    console.log(`🔍 Validation Endpoint: http://localhost:${port}/api/validate`);
+    console.log(`💻 Web Interface: http://localhost:${port}`);
+    
+    // Log integration status
+    const integrationStatus = validationEngine.getIntegrationStatus();
+    console.log('\n🔧 Integration Status:');
+    Object.entries(integrationStatus).forEach(([key, value]) => {
+      if (typeof value === 'object') {
+        Object.entries(value).forEach(([subKey, subValue]) => {
+          console.log(`   ${subKey}: ${subValue ? '✅' : '❌'}`);
+        });
+      } else {
+        console.log(`   ${key}: ${value ? '✅' : '❌'}`);
+      }
+    });
+    console.log('');
   });
-  console.log('');
-});
+}
 
+// Export for Vercel
 module.exports = app;
